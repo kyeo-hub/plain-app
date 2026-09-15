@@ -2,86 +2,125 @@
 type Query {
   appFiles(offset: Int!, limit: Int!): [AppFile!]!
   appFileCount: Int!
-  uploadedChunks(fileId: String!): [String!]!
-  mergeStatus(fileId: String!): String!
-  pomodoroSettings: PomodoroSettings!
-  pomodoroToday: PomodoroToday!
-  noteCount(query: String!): Int!
-  note(id: ID!): Note
-  notes(offset: Int!, limit: Int!, query: String!): [Note!]!
-  imageCount(query: String!): Int!
-  imageSearchStatus: ImageSearchStatus!
-  images(offset: Int!, limit: Int!, query: String!, sortBy: FileSortBy!): [Image!]!
-  dataStorePath: String!
-  dataStoreEntries: [KeyValuePair!]!
-  screenMirrorState: Boolean!
-  screenMirrorVideoCodec: ScreenMirrorVideoCodec
-  screenMirrorControlEnabled: Boolean!
-  screenMirrorQuality: ScreenMirrorQuality!
-  imageEditorProjects: [ImageEditorProjectSummary!]!
-  imageEditorProject(id: ID!): ImageEditorProject
   chatChannels: [ChatChannel!]!
-  bookmarks: [Bookmark!]!
-  bookmarkGroups: [BookmarkGroup!]!
   notifications: [Notification!]!
-  mediaBuckets(type: DataType!): [MediaBucket!]!
-  packages(offset: Int!, limit: Int!, query: String!, sortBy: FileSortBy!): [Package!]!
-  packageStatuses(ids: [ID!]!): [PackageStatus!]!
-  packageCount(query: String!): Int!
   docCount(query: String!): Int!
   docExtGroups: [DocExtGroup!]!
   docs(offset: Int!, limit: Int!, query: String!, sortBy: FileSortBy!): [Doc!]!
-  dbPath: String!
-  dbTables: [String!]!
-  dbTableRowCount(table: String!): Long!
-  dbTableRows(table: String!, offset: Int!, limit: Int!): [String!]!
-  dbTableInfo(table: String!): DbTableInfo!
-  tags(type: DataType!): [Tag!]!
-  tagRelations(type: DataType!, keys: [String!]!): [TagRelation!]!
-  appLogs(offset: Int!, limit: Int!): [String!]!
-  appLogPath: String!
-  callCount(query: String!): Int!
-  sims: [Sim!]!
-  calls(offset: Int!, limit: Int!, query: String!): [Call!]!
-  audioCount(query: String!): Int!
-  audios(offset: Int!, limit: Int!, query: String!, sortBy: FileSortBy!): [Audio!]!
-  audioLyrics(path: String!): String!
-  clipboard(offset: Int!, limit: Int!, query: String!): [Clipboard!]!
-  clipboardCount(query: String!): Int!
-  contactCount(query: String!): Int!
-  contactSources: [ContactSource!]!
-  contactGroups: [ContactGroup!]!
-  contacts(offset: Int!, limit: Int!, query: String!): [Contact!]!
-  chatItems(id: String!): [ChatItem!]!
-  latestChatItems: [ChatItem!]!
-  isDiscovering: Boolean!
-  feeds: [Feed!]!
-  feedsCount: [FeedCount!]!
-  feedEntryCount(query: String!): Int!
-  feedEntry(id: ID!): FeedEntry
-  feedEntries(offset: Int!, limit: Int!, query: String!): [FeedEntry!]!
-  deviceInfo: DeviceInfo!
-  battery: Battery!
-  app: App!
-  videoCount(query: String!): Int!
-  videos(offset: Int!, limit: Int!, query: String!, sortBy: FileSortBy!): [Video!]!
-  mounts: [StorageMount!]!
-  recentFiles: [File!]!
-  files(root: String!, offset: Int!, limit: Int!, query: String!, sortBy: FileSortBy!): [File!]!
-  fileInfo(id: ID!, path: String!, fileName: String!): FileInfo!
-  fileIds(paths: [String!]!): [String!]!
-  peers: [Peer!]!
   smsAllCounts: SmsCounts!
   sms(offset: Int!, limit: Int!, query: String!): [Message!]!
   smsConversations(offset: Int!, limit: Int!, query: String!): [MessageConversation!]!
   smsCount(query: String!): Int!
   smsConversationCount(query: String!): Int!
   archivedConversations: [MessageConversation!]!
-  smsDeleteAvailable: Boolean!
+  tags(type: DataType!): [Tag!]!
+  tagRelations(type: DataType!, keys: [String!]!): [TagRelation!]!
+  appLogs(offset: Int!, limit: Int!): [String!]!
+  appLogPath: String!
+  screenMirrorState: Boolean!
+  screenMirrorVideoCodec: ScreenMirrorVideoCodec
+  screenMirrorControlEnabled: Boolean!
+  screenMirrorQuality: ScreenMirrorQuality!
+  uploadedChunks(fileId: String!): [String!]!
+  mergeStatus(fileId: String!): String!
+  feeds: [Feed!]!
+  feedsCount: [FeedCount!]!
+  feedEntryCount(query: String!): Int!
+  feedEntry(id: ID!): FeedEntry
+  feedEntries(offset: Int!, limit: Int!, query: String!): [FeedEntry!]!
+  peers: [Peer!]!
+  chatItems(id: String!): [ChatItem!]!
+  latestChatItems: [ChatItem!]!
+  audioCount(query: String!): Int!
+  audios(offset: Int!, limit: Int!, query: String!, sortBy: FileSortBy!): [Audio!]!
+  audioLyrics(path: String!): String!
+  imageCount(query: String!): Int!
+  imageSearchStatus: ImageSearchStatus!
+  images(offset: Int!, limit: Int!, query: String!, sortBy: FileSortBy!): [Image!]!
+  callCount(query: String!): Int!
+  sims: [Sim!]!
+  calls(offset: Int!, limit: Int!, query: String!): [Call!]!
+  noteCount(query: String!): Int!
+  note(id: ID!): Note
+  notes(offset: Int!, limit: Int!, query: String!): [Note!]!
+  mediaBuckets(type: DataType!): [MediaBucket!]!
+  deviceInfo: DeviceInfo!
+  battery: Battery!
+  app: App!
+  contactCount(query: String!): Int!
+  contactSources: [ContactSource!]!
+  contactGroups: [ContactGroup!]!
+  contacts(offset: Int!, limit: Int!, query: String!): [Contact!]!
+  isDiscovering: Boolean!
+  pomodoroSettings: PomodoroSettings!
+  pomodoroToday: PomodoroToday!
+  dataStorePath: String!
+  dataStoreEntries: [KeyValuePair!]!
+  imageEditorProjects: [ImageEditorProjectSummary!]!
+  imageEditorProject(id: ID!): ImageEditorProject
+  packages(offset: Int!, limit: Int!, query: String!, sortBy: FileSortBy!): [Package!]!
+  packageStatuses(ids: [ID!]!): [PackageStatus!]!
+  packageCount(query: String!): Int!
+  dbPath: String!
+  dbTables: [String!]!
+  dbTableRowCount(table: String!): Long!
+  dbTableRows(table: String!, offset: Int!, limit: Int!): [String!]!
+  dbTableInfo(table: String!): DbTableInfo!
+  videoCount(query: String!): Int!
+  videos(offset: Int!, limit: Int!, query: String!, sortBy: FileSortBy!): [Video!]!
+  clipboard(offset: Int!, limit: Int!, query: String!): [Clipboard!]!
+  clipboardCount(query: String!): Int!
+  bookmarks: [Bookmark!]!
+  bookmarkGroups: [BookmarkGroup!]!
+  mounts: [StorageMount!]!
+  recentFiles: [File!]!
+  files(root: String!, offset: Int!, limit: Int!, query: String!, sortBy: FileSortBy!): [File!]!
+  fileInfo(id: ID!, path: String!, fileName: String!): FileInfo!
+  fileIds(paths: [String!]!): [String!]!
 }
 
 """Mutation object"""
 type Mutation {
+  createChatChannel(name: String!): ChatChannel!
+  updateChatChannel(id: ID!, name: String!): ChatChannel!
+  deleteChatChannel(id: ID!): Boolean!
+  leaveChatChannel(id: ID!): Boolean!
+  addChatChannelMember(id: ID!, peerId: String!): ChatChannel!
+  removeChatChannelMember(id: ID!, peerId: String!): ChatChannel!
+  acceptChatChannelInvite(id: ID!): Boolean!
+  declineChatChannelInvite(id: ID!): Boolean!
+  cancelNotifications(ids: [ID!]!): Boolean!
+  replyNotification(id: ID!, actionIndex: Int!, text: String!): Boolean!
+  unarchiveConversation(id: String!): Boolean!
+  sendSms(number: String!, body: String!, subscriptionId: Int!, requestId: String): Boolean!
+  archiveConversation(id: String!, date: Long!): Boolean!
+  trashSms(query: String!): Boolean!
+  restoreSms(query: String!): Boolean!
+  smsDeleteAvailable: Boolean!
+  deleteSms(query: String!): Boolean!
+  sendMms(number: String!, body: String!, attachmentPaths: [String!]!, threadId: String!): String!
+  createTag(type: DataType!, name: String!): Tag
+  updateTag(id: ID!, name: String!): Tag
+  deleteTag(id: ID!): Boolean!
+  addToTags(type: DataType!, tagIds: [ID!]!, query: String!): Boolean!
+  updateTagRelations(type: DataType!, item: TagRelationStub!, addTagIds: [ID!]!, removeTagIds: [ID!]!): Boolean!
+  removeFromTags(type: DataType!, tagIds: [ID!]!, query: String!): Boolean!
+  clearAppLogs: Boolean!
+  """Initiate pairing with a discovered LAN device."""
+  pairDevice(input: PairingDeviceInput!): Boolean!
+  """Cancel an in-progress pairing initiated by this device."""
+  cancelPairing(deviceId: String!): Boolean!
+  """Respond to an incoming pairing request — accept or reject."""
+  respondToPairing(input: PairingRequestInput!, accepted: Boolean!): Boolean!
+  startScreenMirror(audio: Boolean!): Boolean!
+  requestScreenMirrorAudio: Boolean!
+  stopScreenMirror: Boolean!
+  updateScreenMirrorQuality(mode: ScreenMirrorMode!): Boolean!
+  sendScreenMirrorControl(input: ScreenMirrorControlInput!): Boolean!
+  requestScreenMirrorKeyFrame: Boolean!
+  deleteChunks(fileId: String!): Boolean!
+  mergeChunks(fileId: String!, totalChunks: Int!, path: String!, replace: Boolean!, isAppFile: Boolean!, totalSize: Long!): String!
+  mergeChunksAsync(fileId: String!, totalChunks: Int!, path: String!, replace: Boolean!, isAppFile: Boolean!, totalSize: Long!): String!
   deleteFiles(paths: [String!]!): Boolean!
   createDir(path: String!): File!
   renameFile(path: String!, name: String!): Boolean!
@@ -91,93 +130,6 @@ type Mutation {
   addFavoriteFolder(rootPath: String!, fullPath: String!): [FavoriteFolder!]!
   removeFavoriteFolder(fullPath: String!): [FavoriteFolder!]!
   setFavoriteFolderAlias(fullPath: String!, alias: String!): [FavoriteFolder!]!
-  deleteChunks(fileId: String!): Boolean!
-  mergeChunks(fileId: String!, totalChunks: Int!, path: String!, replace: Boolean!, isAppFile: Boolean!, totalSize: Long!): String!
-  mergeChunksAsync(fileId: String!, totalChunks: Int!, path: String!, replace: Boolean!, isAppFile: Boolean!, totalSize: Long!): String!
-  startPomodoro(timeLeft: Int!): Boolean!
-  pausePomodoro: Boolean!
-  stopPomodoro: Boolean!
-  saveNote(id: ID!, input: NoteInput!): Note
-  saveFeedEntriesToNotes(query: String!): [String!]!
-  trashNotes(query: String!): String!
-  restoreNotes(query: String!): String!
-  deleteNotes(query: String!): String!
-  exportNotes(query: String!): String!
-  enableImageSearch: Boolean!
-  disableImageSearch: Boolean!
-  cancelImageModelDownload: Boolean!
-  startImageIndex(force: Boolean): Boolean!
-  cancelImageIndex: Boolean!
-  deleteDataStoreEntry(key: String!): Boolean!
-  startScreenMirror(audio: Boolean!): Boolean!
-  requestScreenMirrorAudio: Boolean!
-  stopScreenMirror: Boolean!
-  updateScreenMirrorQuality(mode: ScreenMirrorMode!): Boolean!
-  sendScreenMirrorControl(input: ScreenMirrorControlInput!): Boolean!
-  requestScreenMirrorKeyFrame: Boolean!
-  saveImageEditorProject(id: ID!, input: ImageEditorProjectInput!): ImageEditorProject
-  deleteImageEditorProject(id: ID!): Boolean!
-  broadcastImageEditorUpdate(pid: String!, update: String!): Boolean!
-  createChatChannel(name: String!): ChatChannel!
-  updateChatChannel(id: ID!, name: String!): ChatChannel!
-  deleteChatChannel(id: ID!): Boolean!
-  leaveChatChannel(id: ID!): Boolean!
-  addChatChannelMember(id: ID!, peerId: String!): ChatChannel!
-  removeChatChannelMember(id: ID!, peerId: String!): ChatChannel!
-  acceptChatChannelInvite(id: ID!): Boolean!
-  declineChatChannelInvite(id: ID!): Boolean!
-  """Initiate pairing with a discovered LAN device."""
-  pairDevice(input: PairingDeviceInput!): Boolean!
-  """Cancel an in-progress pairing initiated by this device."""
-  cancelPairing(deviceId: String!): Boolean!
-  """Respond to an incoming pairing request — accept or reject."""
-  respondToPairing(input: PairingRequestInput!, accepted: Boolean!): Boolean!
-  addBookmarks(urls: [String!]!, groupId: String!): [Bookmark!]!
-  updateBookmark(id: ID!, input: BookmarkInput!): Bookmark
-  deleteBookmarks(ids: [ID!]!): Boolean!
-  recordBookmarkClick(id: ID!): Boolean!
-  createBookmarkGroup(name: String!): BookmarkGroup!
-  updateBookmarkGroup(id: ID!, name: String!, collapsed: Boolean!, sortOrder: Int!): BookmarkGroup
-  deleteBookmarkGroup(id: ID!): Boolean!
-  cancelNotifications(ids: [ID!]!): Boolean!
-  replyNotification(id: ID!, actionIndex: Int!, text: String!): Boolean!
-  deleteMediaItems(type: DataType!, query: String!): ActionResult!
-  trashMediaItems(type: DataType!, query: String!): ActionResult!
-  restoreMediaItems(type: DataType!, query: String!): ActionResult!
-  moveMediaItems(type: DataType!, query: String!, destDir: String!): ActionResult!
-  uninstallPackages(ids: [ID!]!): Boolean!
-  installPackage(path: String!): PackageInstallPending!
-  createDbTableRow(table: String!, row: String!): Boolean!
-  deleteDbTableRows(table: String!, ids: [String!]!): Boolean!
-  createTag(type: DataType!, name: String!): Tag
-  updateTag(id: ID!, name: String!): Tag
-  deleteTag(id: ID!): Boolean!
-  addToTags(type: DataType!, tagIds: [ID!]!, query: String!): Boolean!
-  updateTagRelations(type: DataType!, item: TagRelationStub!, addTagIds: [ID!]!, removeTagIds: [ID!]!): Boolean!
-  removeFromTags(type: DataType!, tagIds: [ID!]!, query: String!): Boolean!
-  clearAppLogs: Boolean!
-  call(number: String!, showDialer: Boolean!): Boolean!
-  deleteCalls(query: String!): Boolean!
-  playAudio(path: String!): PlaylistAudio!
-  updateAudioPlayMode(mode: MediaPlayMode!): Boolean!
-  clearAudioPlaylist: Boolean!
-  deletePlaylistAudio(path: String!): Boolean!
-  addPlaylistAudios(query: String!): Boolean!
-  reorderPlaylistAudios(paths: [String!]!): Boolean!
-  setClipboard(text: String!): Boolean!
-  cancelClipboard(ids: [ID!]!): Boolean!
-  deleteContacts(query: String!): Boolean!
-  updateContact(id: ID!, input: ContactInput!): Contact
-  createContact(input: ContactInput!): Contact
-  createContactGroup(name: String!, accountName: String!, accountType: String!): ContactGroup!
-  updateContactGroup(id: ID!, name: String!): ContactGroup!
-  deleteContactGroup(id: ID!): Boolean!
-  sendChatItem(toId: String!, content: String!): [ChatItem!]!
-  deleteChatItem(id: ID!): Boolean!
-  deleteChatItems(query: String!): Boolean!
-  retryChatItem(id: ID!): ChatItem
-  startDiscovery: Boolean!
-  stopDiscovery: Boolean!
   fetchFeedContent(id: ID!): FeedEntry
   syncFeeds(id: ID): Boolean!
   updateFeed(id: ID!, name: String!, fetchContent: Boolean!): Feed
@@ -187,21 +139,69 @@ type Mutation {
   deleteFeed(id: ID!): Boolean!
   syncFeedContent(id: ID!): FeedEntry
   deleteFeedEntries(query: String!): String!
+  deletePeer(id: ID!): Boolean!
+  unpairPeer(id: ID!): Boolean!
+  sendChatItem(toId: String!, content: String!): [ChatItem!]!
+  deleteChatItem(id: ID!): Boolean!
+  deleteChatItems(query: String!): Boolean!
+  retryChatItem(id: ID!): ChatItem
+  playAudio(path: String!): PlaylistAudio!
+  updateAudioPlayMode(mode: MediaPlayMode!): Boolean!
+  clearAudioPlaylist: Boolean!
+  deletePlaylistAudio(path: String!): Boolean!
+  addPlaylistAudios(query: String!): Boolean!
+  reorderPlaylistAudios(paths: [String!]!): Boolean!
+  enableImageSearch: Boolean!
+  disableImageSearch: Boolean!
+  cancelImageModelDownload: Boolean!
+  startImageIndex(force: Boolean): Boolean!
+  cancelImageIndex: Boolean!
+  call(number: String!, showDialer: Boolean!): Boolean!
+  deleteCalls(query: String!): Boolean!
+  saveNote(id: ID!, input: NoteInput!): Note
+  saveFeedEntriesToNotes(query: String!): [String!]!
+  trashNotes(query: String!): String!
+  restoreNotes(query: String!): String!
+  deleteNotes(query: String!): String!
+  exportNotes(query: String!): String!
+  deleteMediaItems(type: DataType!, query: String!): ActionResult!
+  trashMediaItems(type: DataType!, query: String!): ActionResult!
+  restoreMediaItems(type: DataType!, query: String!): ActionResult!
+  moveMediaItems(type: DataType!, query: String!, destDir: String!): ActionResult!
   setTempValue(key: String!, value: String!): TempValue!
   relaunchApp: Boolean!
   openAccessibilitySettings: Boolean!
   openWebSettings: Boolean!
   setClip(text: String!): Boolean!
   updateDeviceName(name: String!): Boolean!
-  deletePeer(id: ID!): Boolean!
-  unpairPeer(id: ID!): Boolean!
-  unarchiveConversation(id: String!): Boolean!
-  sendSms(number: String!, body: String!, subscriptionId: Int!, requestId: String): Boolean!
-  archiveConversation(id: String!, date: Long!): Boolean!
-  trashSms(query: String!): Boolean!
-  restoreSms(query: String!): Boolean!
-  deleteSms(query: String!): Boolean!
-  sendMms(number: String!, body: String!, attachmentPaths: [String!]!, threadId: String!): String!
+  deleteContacts(query: String!): Boolean!
+  updateContact(id: ID!, input: ContactInput!): Contact
+  createContact(input: ContactInput!): Contact
+  createContactGroup(name: String!, accountName: String!, accountType: String!): ContactGroup!
+  updateContactGroup(id: ID!, name: String!): ContactGroup!
+  deleteContactGroup(id: ID!): Boolean!
+  startDiscovery: Boolean!
+  stopDiscovery: Boolean!
+  startPomodoro(timeLeft: Int!): Boolean!
+  pausePomodoro: Boolean!
+  stopPomodoro: Boolean!
+  deleteDataStoreEntry(key: String!): Boolean!
+  saveImageEditorProject(id: ID!, input: ImageEditorProjectInput!): ImageEditorProject
+  deleteImageEditorProject(id: ID!): Boolean!
+  broadcastImageEditorUpdate(pid: String!, update: String!): Boolean!
+  uninstallPackages(ids: [ID!]!): Boolean!
+  installPackage(path: String!): PackageInstallPending!
+  createDbTableRow(table: String!, row: String!): Boolean!
+  deleteDbTableRows(table: String!, ids: [String!]!): Boolean!
+  setClipboard(text: String!): Boolean!
+  cancelClipboard(ids: [ID!]!): Boolean!
+  addBookmarks(urls: [String!]!, groupId: String!): [Bookmark!]!
+  updateBookmark(id: ID!, input: BookmarkInput!): Bookmark
+  deleteBookmarks(ids: [ID!]!): Boolean!
+  recordBookmarkClick(id: ID!): Boolean!
+  createBookmarkGroup(name: String!): BookmarkGroup!
+  updateBookmarkGroup(id: ID!, name: String!, collapsed: Boolean!, sortOrder: Int!): BookmarkGroup
+  deleteBookmarkGroup(id: ID!): Boolean!
 }
 
 type ActionResult {
